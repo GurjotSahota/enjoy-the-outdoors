@@ -2,18 +2,44 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>National Parks</title>
+    <link rel="stylesheet" href="css/index.css" />
   </head>
   <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="mountains.html">Mountains</a></li>
+          <li><a href="national-parks.html">National Parks</a></li>
+        </ul>
+      </nav>
+    </header>
+
     <main>
-      <h1>National Parks</h1>
+      <h1 style="text-align: center;">Explore National Parks</h1>
+
+      <label for="locationDropdown">Search by Location:</label>
+      <select id="locationDropdown">
+        <option value="">Select a location</option>
+      </select>
+
+      <label for="parkTypeDropdown">Search by Park Type:</label>
+      <select id="parkTypeDropdown">
+        <option value="">Select a park type</option>
+      </select>
+
+      <div id="results"></div>
     </main>
+
+    <footer>
+      <p>&copy; All rights reserved.</p>
+    </footer>
+
     <script src="scripts/locationData.js"></script>
     <script src="scripts/parkTypeData.js"></script>
-    <script src="scripts/nationalParkData.js"></script>
-
     <script src="scripts/national-parks.js"></script>
+    <script src="scripts/nationalParkData.js"></script>
   </body>
 </html>

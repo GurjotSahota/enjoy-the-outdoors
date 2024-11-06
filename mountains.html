@@ -2,14 +2,41 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mountains</title>
+    <title>Mountains Information</title>
+    <link rel="stylesheet" href="css/index.css" />
   </head>
   <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="mountains.html">Mountains</a></li>
+          <li><a href="national-parks.html">National Parks</a></li>
+        </ul>
+      </nav>
+    </header>
+
     <main>
-      <h1>Mountains</h1>
+      <h1 style="text-align: center;">Explore The Mountains</h1>
+
+      <label for="mountainDropdown">Select a Mountain:</label>
+      <select id="mountainDropdown">
+        <option value="">Select a mountain</option>
+      </select>
+
+      <div id="mountainInfo" style="display: none">
+        <h2 id="mountainName"></h2>
+        <img id="mountainImage" src="" alt="Mountain Image" />
+        <p><strong>Description:</strong> <span id="mountainDesc"></span></p>
+        <p><strong>Elevation:</strong> <span id="mountainElevation"></span> ft</p>
+      </div>
     </main>
+
+    <footer>
+      <p>&copy; All rights reserved.</p>
+    </footer>
+
     <script src="scripts/mountainData.js"></script>
     <script src="scripts/mountains.js"></script>
   </body>
