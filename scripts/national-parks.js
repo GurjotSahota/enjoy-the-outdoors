@@ -116,6 +116,7 @@ function loadParks() {
       // adding each row to the table
       parksTableBody.appendChild(row);
     });
+    
   }
 }
 
