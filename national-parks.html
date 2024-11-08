@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <title>National Parks Search</title>
     <link rel="stylesheet" href="css/parks.css" />
-
   </head>
   <body>
     <header>
@@ -17,7 +16,7 @@
       </nav>
     </header>
     <div class="container">
-      <h1>National Parks Search</h1>
+      <h1>Find The Park That's Right For You!</h1>
 
       <div class="input-section">
         <label for="locationSelect">Select Location:</label>
@@ -34,6 +33,25 @@
         <button id="viewAllButton">View All National Parks</button>
       </div>
 
+      <div id="map" style="height: 400px; width: 100%"></div>
+
+      <script>
+        function initMap() {
+          // centered onto Jersey City, NJ
+          const location = { lat: 40.719074, lng: -74.050552 };
+
+          const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 8,
+            center: location,
+          });
+
+          const marker = new google.maps.Marker({
+            position: location,
+            map: map,
+          });
+        }
+      </script>
+
       <table id="parksTable">
         <thead>
           <tr>
@@ -43,9 +61,7 @@
             <th>Description</th>
           </tr>
         </thead>
-        <tbody>
-         
-        </tbody>
+        <tbody></tbody>
       </table>
     </div>
 
@@ -53,10 +69,13 @@
       <p>&copy; All rights reserved.</p>
     </footer>
 
-    
     <script src="scripts/locationData.js"></script>
     <script src="scripts/parkTypeData.js"></script>
     <script src="scripts/national-parks.js"></script>
     <script src="scripts/nationalParkData.js"></script>
+    <script
+      async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaZSbzzwdqAm2Fm_xev4gBHWYXSEekUyo&callback=initMap"
+    ></script>
   </body>
 </html>
