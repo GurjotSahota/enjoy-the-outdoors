@@ -1,0 +1,26 @@
+document.addEventListener("DOMContentLoaded", () => {
+  let currentIndex = 0;
+  const items = document.querySelectorAll(".carousel-item");
+  const totalItems = items.length;
+
+  // Function to go to the next slide
+  function nextSlide() {
+    items[currentIndex].classList.remove("active");
+    currentIndex = (currentIndex + 1) % totalItems; // Looping to the first slide when reaching the end
+    items[currentIndex].classList.add("active");
+  }
+
+  // Function to go to the previous slide
+  function prevSlide() {
+    items[currentIndex].classList.remove("active");
+    currentIndex = (currentIndex - 1 + totalItems) % totalItems; // Looping to the last slide when at the start
+    items[currentIndex].classList.add("active");
+  }
+
+  // Auto-slide every 3 seconds
+  setInterval(nextSlide, 3000);
+
+  // Attach functions to window so they can be called by the controls
+  window.nextSlide = nextSlide;
+  window.prevSlide = prevSlide;
+});
