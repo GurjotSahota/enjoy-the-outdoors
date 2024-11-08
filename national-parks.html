@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>National Parks</title>
-    <link rel="stylesheet" href="css/index.css" />
+    <title>National Parks Search</title>
+    <link rel="stylesheet" href="css/parks.css" />
+
   </head>
   <body>
     <header>
@@ -16,27 +16,44 @@
         </ul>
       </nav>
     </header>
+    <div class="container">
+      <h1>National Parks Search</h1>
 
-    <main>
-      <h1 style="text-align: center;">Explore National Parks</h1>
+      <div class="input-section">
+        <label for="locationSelect">Select Location:</label>
+        <select id="locationSelect">
+          <option value="">--All Locations--</option>
+        </select>
 
-      <label for="locationDropdown">Search by Location:</label>
-      <select id="locationDropdown">
-        <option value="">Select a location</option>
-      </select>
+        <label for="typeSelect">Select Park Type:</label>
+        <select id="typeSelect">
+          <option value="">--All Park Types--</option>
+        </select>
 
-      <label for="parkTypeDropdown">Search by Park Type:</label>
-      <select id="parkTypeDropdown">
-        <option value="">Select a park type</option>
-      </select>
+        <button id="searchParksButton">Search Parks</button>
+        <button id="viewAllButton">View All National Parks</button>
+      </div>
 
-      <div id="results"></div>
-    </main>
+      <table id="parksTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+         
+        </tbody>
+      </table>
+    </div>
 
     <footer>
       <p>&copy; All rights reserved.</p>
     </footer>
 
+    
     <script src="scripts/locationData.js"></script>
     <script src="scripts/parkTypeData.js"></script>
     <script src="scripts/national-parks.js"></script>
