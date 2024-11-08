@@ -22,7 +22,7 @@ function loadParks() {
     "River",
     "Seashore",
     "Trail",
-    "Parkway"
+    "Parkway",
   ];
 
   // function to help find park type from LocationName
@@ -32,11 +32,11 @@ function loadParks() {
         return keyword;
       }
     }
-    return "Unknown Type"; 
+    return "Unknown Type";
   }
 
   // populate the location dropdown menu
-  locationsArray.forEach(location => {
+  locationsArray.forEach((location) => {
     const option = document.createElement("option");
     option.value = location;
     option.textContent = location;
@@ -44,7 +44,7 @@ function loadParks() {
   });
 
   // populate the park type dropdown menu
-  parkTypesArray.forEach(type => {
+  parkTypesArray.forEach((type) => {
     const option = document.createElement("option");
     option.value = type;
     option.textContent = type;
@@ -60,25 +60,23 @@ function loadParks() {
     let filteredParks = nationalParksArray;
 
     if (selectedLocation) {
-      filteredParks = filteredParks.filter(park => park.State === selectedLocation);
+      filteredParks = filteredParks.filter((park) => park.State === selectedLocation);
     }
 
     // Filter by inferred type if selected
     if (selectedType) {
-      filteredParks = filteredParks.filter(park => getParkType(park.LocationName) === selectedType);
+      filteredParks = filteredParks.filter((park) => getParkType(park.LocationName) === selectedType);
     }
 
     displayParks(filteredParks);
   });
 
-  
   viewAllButton.addEventListener("click", () => {
-    displayParks(nationalParksArray);  // Displays all parks, with no filters
+    displayParks(nationalParksArray); // Displays all parks, with no filters
   });
 
-  
   function displayParks(parks) {
-    parksTableBody.innerHTML = "";  
+    parksTableBody.innerHTML = "";
 
     if (parks.length === 0) {
       const noDataRow = document.createElement("tr");
@@ -90,7 +88,7 @@ function loadParks() {
       return;
     }
 
-    parks.forEach(park => {
+    parks.forEach((park) => {
       const row = document.createElement("tr");
 
       // name cell
@@ -103,23 +101,23 @@ function loadParks() {
       locationCell.textContent = park.State || "N/A";
       row.appendChild(locationCell);
 
-      // type cell 
+      // type cell
       const typeCell = document.createElement("td");
       typeCell.textContent = getParkType(park.LocationName);
       row.appendChild(typeCell);
 
       // address cell
       const descriptionCell = document.createElement("td");
-      descriptionCell.textContent = park.Address ? `Address: ${park.Address}, ${park.City}, ${park.State}` : "No description available";
+      descriptionCell.textContent = park.Address
+        ? `Address: ${park.Address}, ${park.City}, ${park.State}`
+        : "No description available";
       row.appendChild(descriptionCell);
 
       // adding each row to the table
       parksTableBody.appendChild(row);
     });
-    
   }
 }
 
 // Call loadParks when the DOM content is fully loaded
 document.addEventListener("DOMContentLoaded", loadParks);
-
