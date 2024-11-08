@@ -65,3 +65,82 @@ footer {
   padding: 1em 0;
   margin-top: 2em;
 }
+
+.mountain-card {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.mountain-card h2 {
+  font-size: 24px;
+  color: #2c6e49;
+  margin-bottom: 10px;
+}
+
+.mountain-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.mountain-details {
+  text-align: left;
+  font-size: 16px;
+  color: #555;
+}
+
+.mountain-details p {
+  margin: 10px 0;
+}
+
+.mountain-details strong {
+  color: #2c6e49;
+}
+
+/*  hide the mountain info card */
+#mountainInfo {
+  display: none;
+}
+
+.testimonials {
+  margin: 40px auto;
+  text-align: center;
+  color: #555;
+  font-style: italic;
+  font-size: 1.1em;
+}
+
+.search-section {
+  text-align: center;
+  margin: 30px auto;
+}
+
+.search-section h2 {
+  color: #2c6e49;
+  margin-bottom: 10px;
+}
+
+#searchBar {
+  padding: 10px;
+  width: 60%;
+  max-width: 400px;
+}
+
+.search-section button {
+  padding: 10px 20px;
+  background-color: #2c6e49;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+h1 {
+  color: #2c6e49;
+}
