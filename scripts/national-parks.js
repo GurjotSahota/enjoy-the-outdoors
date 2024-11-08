@@ -93,22 +93,22 @@ function loadParks() {
     parks.forEach(park => {
       const row = document.createElement("tr");
 
-      // name cell
+      
       const nameCell = document.createElement("td");
       nameCell.textContent = park.LocationName || "N/A";
       row.appendChild(nameCell);
 
-      // Location cell
+      
       const locationCell = document.createElement("td");
       locationCell.textContent = park.State || "N/A";
       row.appendChild(locationCell);
 
-      // Type cell 
+       
       const typeCell = document.createElement("td");
       typeCell.textContent = getParkType(park.LocationName);
       row.appendChild(typeCell);
 
-      // Address cell
+      
       const descriptionCell = document.createElement("td");
       descriptionCell.textContent = park.Address ? `Address: ${park.Address}, ${park.City}, ${park.State}` : "No description available";
       row.appendChild(descriptionCell);
@@ -119,6 +119,6 @@ function loadParks() {
   }
 }
 
-// Call loadParks when the DOM content is fully loaded
+
 document.addEventListener("DOMContentLoaded", loadParks);
 
