@@ -25,7 +25,7 @@ function loadParks() {
     "Parkway"
   ];
 
-  // Helper function to determine park type from LocationName
+  // function to help find park type from LocationName
   function getParkType(locationName) {
     for (const keyword of parkTypeKeywords) {
       if (locationName.includes(keyword)) {
@@ -35,7 +35,7 @@ function loadParks() {
     return "Unknown Type"; 
   }
 
-  // Populate location dropdown
+  // populate the location dropdown menu
   locationsArray.forEach(location => {
     const option = document.createElement("option");
     option.value = location;
@@ -43,7 +43,7 @@ function loadParks() {
     locationSelect.appendChild(option);
   });
 
-  // Populate park type dropdown
+  // populate the park type dropdown menu
   parkTypesArray.forEach(type => {
     const option = document.createElement("option");
     option.value = type;
@@ -73,7 +73,7 @@ function loadParks() {
 
   
   viewAllButton.addEventListener("click", () => {
-    displayParks(nationalParksArray);  // Display parks without filters
+    displayParks(nationalParksArray);  // Displays all parks, with no filters
   });
 
   
@@ -98,22 +98,22 @@ function loadParks() {
       nameCell.textContent = park.LocationName || "N/A";
       row.appendChild(nameCell);
 
-      // Location cell
+      // location cell
       const locationCell = document.createElement("td");
       locationCell.textContent = park.State || "N/A";
       row.appendChild(locationCell);
 
-      // Type cell 
+      // type cell 
       const typeCell = document.createElement("td");
       typeCell.textContent = getParkType(park.LocationName);
       row.appendChild(typeCell);
 
-      // Address cell
+      // address cell
       const descriptionCell = document.createElement("td");
       descriptionCell.textContent = park.Address ? `Address: ${park.Address}, ${park.City}, ${park.State}` : "No description available";
       row.appendChild(descriptionCell);
 
-      // Append the row to the table body
+      // adding each row to the table
       parksTableBody.appendChild(row);
     });
   }
